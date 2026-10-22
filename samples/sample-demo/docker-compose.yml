@@ -1,0 +1,9 @@
+services:
+  request-monitor:
+    image: python:3.12-slim
+    ports:
+      - "8080:8080"
+  prometheus:
+    image: prom/prometheus:latest
+    ports:
+      - "9090:9090"
