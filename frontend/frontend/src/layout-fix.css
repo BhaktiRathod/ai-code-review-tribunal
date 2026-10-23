@@ -1,0 +1,42 @@
+/* Layout fixes (UI only).
+   Root cause of the big empty gap: the sidebar is a sticky flex item (240px wide)
+   AND .main had margin-left:240px, so the content was pushed over twice. */
+.shell{display:flex!important;align-items:flex-start}
+.sidebar{position:sticky!important;top:0;height:100vh!important;flex:0 0 240px;overflow-y:auto}
+.main{margin-left:0!important;flex:1 1 0!important;min-width:0!important;width:auto}
+.content{max-width:1440px!important;margin:0 auto!important;padding:20px 32px 56px!important}
+
+/* Compact hero */
+.heading{min-height:0!important;padding:26px 40px!important;margin-bottom:20px!important;border-radius:22px!important;gap:24px}
+.heading h1{font-size:clamp(30px,3.2vw,46px)!important;letter-spacing:-.045em!important;line-height:1.08!important;margin:14px 0 10px!important}
+.heading p{font-size:14px!important;line-height:1.6!important;max-width:600px!important}
+.hero-content{max-width:640px}
+.hero-pills{margin-top:16px!important;gap:8px!important}
+.hero-pills span{padding:7px 11px!important}
+.hero-art{flex:0 0 190px!important;height:190px!important;transform:none!important}
+.orbit{width:190px!important;height:190px!important}
+.orbit-two{width:146px!important;height:146px!important}
+.orbit-three{width:96px!important;height:96px!important}
+.hero-core{width:72px!important;height:72px!important;border-radius:22px!important}
+.hero-core svg{width:32px;height:32px}
+.orbit-node{width:36px!important;height:36px!important;border-radius:12px!important}
+
+/* Tighter vertical rhythm */
+.workspace-title{margin:8px 0 14px!important}
+.workflow{padding:13px 22px!important;margin:0 0 16px!important}
+.agent-overview{margin-bottom:18px!important}
+.agent-tile{padding:12px 14px!important}
+.input-panel,.council-panel{padding:22px!important}
+.panelhead{margin-bottom:16px!important}
+
+@media(max-width:1250px){
+  .hero-art{flex-basis:170px!important;height:170px!important}
+  .content{padding:18px 22px 48px!important}
+}
+@media(max-width:800px){
+  .sidebar{display:none!important}
+  .heading{padding:22px!important}
+  .heading h1{font-size:32px!important}
+  .hero-art{display:none!important}
+  .content{padding:14px!important}
+}

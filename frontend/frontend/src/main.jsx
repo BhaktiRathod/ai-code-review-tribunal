@@ -9,6 +9,7 @@ import './style.css';
 import './studio.css';
 import './premium.css';
 import './nextgen.css';
+import './layout-fix.css';
 
 const API=import.meta.env.VITE_API_URL||'';
 const stages=[['upload','ZIP received'],['files','Project files read'],['readme','README inspected'],['ctks','CTKS / specification read'],['requirements','Requirements analysis'],['code','Code inspection'],['documentation','README cross-check'],['evaluation','Evaluation review'],['judge','Chief Judge verdict'],['recheck','Evidence recheck'],['report','Report ready']];
